@@ -3,13 +3,13 @@ import websockets
 import json
 import os
 from socket_server import process_frame  # Import the frame processing function
-import os
 from dotenv import load_dotenv
 
-load_dotenv()  # Load environment variables from .env file
+# Load environment variables from .env file, useful for local development
+load_dotenv()
 
+# Get the port from the environment, defaulting to 3000 if not set
 port = int(os.getenv("PORT", 3000))
-
 
 async def handle_connection(websocket, path):
     try:
@@ -36,7 +36,6 @@ async def handle_connection(websocket, path):
         print(f'Connection closed: {e}')
 
 async def main():
-    port = int(os.getenv("PORT", 3000))
     print(f'Starting WebSocket server on port {port}...')
     server = await websockets.serve(handle_connection, "0.0.0.0", port)
     print(f'WebSocket server started on ws://0.0.0.0:{port}')
