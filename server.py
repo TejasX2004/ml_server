@@ -2,7 +2,7 @@ import asyncio
 import websockets
 import json
 import os
-from socket_server import process_frame  # Import the frame processing function
+from server import process_frame  # Import the frame processing function
 from dotenv import load_dotenv
 
 # Load environment variables from .env file, useful for local development
