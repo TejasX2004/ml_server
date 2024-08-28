@@ -1,3 +1,7 @@
-
+opencv-python
+torch
+torchvision
+ultralytics
+Pillow
 websockets==13.0
-
+python-dotenv
